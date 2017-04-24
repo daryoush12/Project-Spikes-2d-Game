@@ -1,0 +1,22 @@
+public class EssenceBase : IEssenceBase{
+private GameObject essence;
+public GameObject Essence {	get return essence;
+	                        set essence = value; }
+private EssenceType esst = EssenceType.Debug;
+public EssenceType essT {   get return esst;
+                            set if(value is Enum){esst = value;} }
+
+	public void checkCollision(Collision2D col){
+	    if (col.gameObject.tag == "Player"){
+	        Debug.Log("EssenceAdd Called.");
+	        // Call for boost and destroy object.
+	        Destroy(essence);
+	    }else{
+	        Debug.Log("Something else triggered.");
+	    }
+	}
+
+	public void refrence(string toFind){
+	    Essence = GameObject.Find(toFind);
+	}
+}
